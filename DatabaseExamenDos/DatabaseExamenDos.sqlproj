@@ -70,6 +70,7 @@
     <Build Include="StoredProcedures\OrdenActualizar.sql" />
     <Build Include="StoredProcedures\OrdenEliminar.sql" />
     <Build Include="StoredProcedures\OrdenObtener.sql" />
+    <Build Include="StoredProcedures\ProductoList.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DatabaseExamenDos.refactorlog" />

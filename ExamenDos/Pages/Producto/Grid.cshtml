@@ -1,0 +1,42 @@
+﻿@page
+@model ExamenDos.Pages.Producto.GridModel
+@{
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <br />
+        <div class="card-header">Productos</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table table-stripped table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr>
+                                    <td>@item.IdProducto</td>
+                                    <td>@item.NombreProducto</td>
+                                    <td>@(@item.PrecioProducto + "CRC")</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" onclick="TipoInquilinoGrid.OnClickDelete(@item.IdProducto)">
+                                            <i class="bx bx-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

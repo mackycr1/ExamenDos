@@ -24,6 +24,18 @@ namespace WBL
             this.sql = sql;
         }
 
+        public async Task<IEnumerable<ProductoEntity>> GetList()
+        {
+            try
+            {
+                var result = sql.QueryAsync<ProductoEntity>("ProductoList");
+                return await result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<IEnumerable<ProductoEntity>> Get()
         {
             try
@@ -97,5 +109,7 @@ namespace WBL
                 throw;
             }
         }
+
+
     }
 }
