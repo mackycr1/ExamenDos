@@ -13,6 +13,7 @@ namespace WBL
         Task<DBEntity> Delete(ProductoEntity entity);
         Task<IEnumerable<ProductoEntity>> Get();
         Task<ProductoEntity> GetById(ProductoEntity entity);
+        Task<IEnumerable<ProductoEntity>> GetProductList();
     }
 
     public class ProductoService : IProductoService
@@ -24,7 +25,7 @@ namespace WBL
             this.sql = sql;
         }
 
-        public async Task<IEnumerable<ProductoEntity>> GetList()
+        public async Task<IEnumerable<ProductoEntity>> GetProductList()
         {
             try
             {
@@ -36,6 +37,7 @@ namespace WBL
                 throw;
             }
         }
+
         public async Task<IEnumerable<ProductoEntity>> Get()
         {
             try

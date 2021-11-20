@@ -1,0 +1,56 @@
+﻿@page
+@model ExamenDos.Pages.Orden.EditModel
+@{
+    ViewData["Title"] = (Model.id.HasValue ? "Actualizar Orden" : "Nueva Orden");
+}
+
+<div id="AppEdit" class="container-fluid" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
+
+    <div class="card">
+        <div class="card-header">
+            @(Model.id.HasValue? "Actualizar Orden" : "Nueva Orden")
+        </div>
+        <div class="card-body">
+
+            @*Form Control*@
+            <form id="FormEdit" method="post">
+
+                <input type="hidden" asp-for="Entity." v-model="Entity.IdProducto" />
+
+                @*Producto*@
+                <div class="form-group mb-3">
+                    <label for="Entity.NombreProducto" class="form-label">Nombre</label>
+                    <section asp-for="Entity.IdProducto" class="form-select" asp-items="@(new SelectList(Model.ProductList, "IdOrden", "IdProduct"))" 
+                             v-model="Entity.IdProducto" required />
+                </div>
+
+
+                @*Cantidad*@
+                <div class="form-group mb-3">
+                    <label for="Entity.CantidadProducto" class="form-label">Cantidad</label>
+                    <input type="number" class="form-control" asp-for="Entity.CantidadProducto" v-model="Entity.CantidadProducto" min="0" required />
+                </div>
+
+                @*Estado*@
+                <div class="form-group mb-3">
+                    <label for="Entity.Estado" class="form-label">Cantidad</label>
+                    <input type="number" class="form-control" asp-for="Entity.Estado" v-model="Entity.Estado" required />
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" @@click="Save" class="btn btn-primary">
+                            @(Model.id.HasValue? "Actualizar" : "Insertar")
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/App/Producto/Edit.js"></script>
+}

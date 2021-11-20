@@ -9,6 +9,12 @@
         <br />
         <div class="card-header">Ordenes</div>
         <div class="card-body">
+
+            @*Add Button*@
+            <a class="btn btn-primary" asp-page="Edit">
+                <i class="bx bxs-add-to-queue"></i>
+            </a>
+
             <div class="row">
                 <div class="col-12">
                     <table id="GridView" class="table table-bordered table table-stripped table table-hover">
@@ -24,17 +30,24 @@
                         <tbody>
                             @foreach (var item in Model.GridList)
                             {
-                            <tr>
-                                <td>@item.IdOrden</td>
-                                <td>@item.Producto.NombreProducto</td>
-                                <td>@item.CantidadProducto</td>
-                                <td>@item.Estado</td>
-                                <td>
-                                    <button type="button" class="btn btn-danger" onclick="OrdenGrid.OnClickDelete(@item.IdOrden)">
-                                        <i class="bx bx-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>@item.IdOrden</td>
+                                    <td>@item.Producto.NombreProducto</td>
+                                    <td>@item.CantidadProducto</td>
+                                    <td>@item.Estado</td>
+                                    <td>
+
+                                        @*Edit Button*@
+                                        <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdOrden">
+                                            <i class="bx bx-edit-alt"></i>
+                                        </a>
+
+                                        @*Delete Button*@
+                                        <button type="button" class="btn btn-danger" onclick="OrdenGrid.OnClickDelete(@item.IdOrden)">
+                                            <i class="bx bx-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>

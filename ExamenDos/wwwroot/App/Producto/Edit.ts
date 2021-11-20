@@ -22,7 +22,7 @@
                             if (data.CodeError == 0) {
 
                                 /*Message indicating the file was successfully deleted*/
-                                Toast.fire({ title: "Registro almaceno exitosamente!", icon: "success" }).then(() => window.location.reload())
+                                Toast.fire({ title: "Registro almaceno exitosamente!", icon: "success" }).then(() => window.location.href = "Producto/Grid")
                             }
                             else {
                                 Toast.fire({ title: data.MsgError, icon: "error" })
