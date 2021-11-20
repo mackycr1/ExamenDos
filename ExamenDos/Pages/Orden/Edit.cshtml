@@ -10,6 +10,7 @@
         <div class="card-header">
             @(Model.id.HasValue? "Actualizar Orden" : "Nueva Orden")
         </div>
+
         <div class="card-body">
 
             @*Form Control*@
@@ -21,9 +22,8 @@
                 <div class="form-group mb-3">
                     <label for="Entity.NombreProducto" class="form-label">Producto</label>
                     <select asp-for="Entity.IdProducto" class="form-select" v-model="Entity.IdProducto"
-                             asp-items="@(new SelectList(Model.ProductList, "IdProducto", "NombreProducto"))" required >
-
-                     </select>
+                            asp-items="@(new SelectList(Model.ProductList, "IdProducto", "NombreProducto"))" required>
+                    </select>
                 </div>
 
 
@@ -32,11 +32,11 @@
                     <label for="Entity.CantidadProducto" class="form-label">Cantidad</label>
                     <input type="number" class="form-control" asp-for="Entity.CantidadProducto" v-model="Entity.CantidadProducto" min="0" required />
                 </div>
-
+                @*bind-value="Entity.Estado"*@
                 @*Estado*@
                 <div class="form-group mb-3">
-                    <label for="Entity.Estado" class="form-label">Estado</label>
-                    <input type="checkbox" class="form-control" asp-for="Entity.Estado" v-model="Entity.Estado" required />
+                    <label for="Entity.Estado" class="form-check-label">Estado</label>
+                    <input type="checkbox" class="form-check-input" asp-for="Entity.Estado" v-model="Entity.Estado" />
                 </div>
 
                 <div class="row">

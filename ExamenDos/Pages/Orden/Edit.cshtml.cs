@@ -61,7 +61,7 @@ namespace ExamenDos.Pages.Orden
                 var result = new DBEntity();
 
                 //Edit
-                if (Entity.IdProducto.HasValue)
+                if (Entity.IdOrden.HasValue)
                 {
                     result = await ordenService.Update(Entity);
                 }
