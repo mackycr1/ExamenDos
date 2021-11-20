@@ -74,10 +74,11 @@ namespace WBL
             {
                 var result = sql.ExecuteAsync("OrdenActualizar", new
                 {
+                    entity.IdOrden,
                     entity.IdProducto,
                     entity.CantidadProducto,
-                    entity.Estado,
-                    entity.IdOrden
+                    entity.Estado
+                    
                 });
                 return await result;
             }

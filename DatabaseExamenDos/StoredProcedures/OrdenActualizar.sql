@@ -17,7 +17,7 @@ AS BEGIN
 			SET IdProducto = @IdProducto,
 				CantidadProducto = @CantidadProducto,
 				Estado = @Estado
-			WHERE IdProducto = @IdOrden
+			WHERE IdOrden = @IdOrden
 			
 			COMMIT TRANSACTION TRANS
 			SELECT 0 AS CodeError, '' AS MsgError

@@ -7,9 +7,9 @@ AS BEGIN
 	SET NOCOUNT ON
 
 	SELECT   O.IdOrden
-			,O.IdProducto
 			,O.CantidadProducto
 			,O.Estado
+			,O.IdProducto
 			,P.NombreProducto
 	FROM [dbo].[Orden] O
 	LEFT JOIN [dbo].[Producto] P

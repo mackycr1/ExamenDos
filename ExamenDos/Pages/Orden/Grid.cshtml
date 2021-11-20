@@ -34,7 +34,7 @@
                                     <td>@item.IdOrden</td>
                                     <td>@item.Producto.NombreProducto</td>
                                     <td>@item.CantidadProducto</td>
-                                    <td>@item.Estado</td>
+                                    <td>@(@item.Estado == true ? "Activo" : "Inactivo")</td>
                                     <td>
 
                                         @*Edit Button*@
