@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBL", "WBL\WBL.csproj", "{1900C31F-6215-41B5-9D7E-491B18339CF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{AE1530F3-B28F-49BE-85C5-A7D0AD5D69D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{1900C31F-6215-41B5-9D7E-491B18339CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1900C31F-6215-41B5-9D7E-491B18339CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1900C31F-6215-41B5-9D7E-491B18339CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1530F3-B28F-49BE-85C5-A7D0AD5D69D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1530F3-B28F-49BE-85C5-A7D0AD5D69D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1530F3-B28F-49BE-85C5-A7D0AD5D69D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1530F3-B28F-49BE-85C5-A7D0AD5D69D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
