@@ -27,7 +27,7 @@
                                     <td>@item.NombreProducto</td>
                                     <td>@(@item.PrecioProducto + "CRC")</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger" onclick="Producto.OnClickDelete(@item.IdProducto)">
+                                        <button type="button" class="btn btn-danger" onclick="ProductoGrid.OnClickDelete(@item.IdProducto)">
                                             <i class="bx bx-trash"></i>
                                         </button>
                                     </td>
@@ -40,3 +40,8 @@
         </div>
     </div>
 </div>
+
+@section Scripts
+{
+    <script defer src="~/App/Producto/Grid.js"></script>
+}
