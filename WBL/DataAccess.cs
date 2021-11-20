@@ -1,6 +1,4 @@
-﻿using Dapper;
-using Dapper.Mapper;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -197,4 +195,4 @@ namespace BD
         }
     }
 }
-}
+
