@@ -5,12 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using Entity;
 
 namespace BD
 {
     public interface IDataAccess
     {
-        Task<Entity.DBEntity> ExecuteAsync(string sp, object Param = null, int? Timeout = null);
+        Task<DBEntity> ExecuteAsync(string sp, object Param = null, int? Timeout = null);
         Task<IEnumerable<dynamic>> QueryAsync(string sp, object Param = null, int? Timeout = null);
         Task<IEnumerable<T>> QueryAsync<T, B, C, D, E, F, G>(string sp, string split, object Param = null, int? Timeout = null);
         Task<IEnumerable<T>> QueryAsync<T, B, C, D, E, F>(string sp, string split, object Param = null, int? Timeout = null);
