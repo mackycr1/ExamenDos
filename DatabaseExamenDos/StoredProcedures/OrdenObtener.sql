@@ -9,8 +9,8 @@ AS BEGIN
 	SELECT   O.IdOrden
 			,O.IdProducto
 			,O.CantidadProducto
-			,O.Estado,
-			P.NombreProducto
+			,O.Estado
+			,P.NombreProducto
 	FROM [dbo].[Orden] O
 	LEFT JOIN [dbo].[Producto] P
 	ON O.IdProducto = P.IdProducto

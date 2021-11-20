@@ -1,0 +1,50 @@
+﻿@page
+@model ExamenDos.Pages.Orden.GridModel
+@{
+    ViewData["Title"] = "Ordenes";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <br />
+        <div class="card-header">Ordenes</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table table-stripped table table-hover">
+                        <thead>
+                            <tr>
+                                <th># Orden</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Estado</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                            <tr>
+                                <td>@item.IdOrden</td>
+                                <td>@item.Producto.NombreProducto</td>
+                                <td>@item.CantidadProducto</td>
+                                <td>@item.Estado</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" onclick="OrdenGrid.OnClickDelete(@item.IdOrden)">
+                                        <i class="bx bx-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script defer src="~/App/Orden/Grid.js"></script>
+}

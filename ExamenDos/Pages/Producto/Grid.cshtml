@@ -1,6 +1,7 @@
 ﻿@page
 @model ExamenDos.Pages.Producto.GridModel
 @{
+    ViewData["Title"] = "Productos";
 }
 
 <div class="container-fluid">
@@ -25,7 +26,7 @@
                                 <tr>
                                     <td>@item.IdProducto</td>
                                     <td>@item.NombreProducto</td>
-                                    <td>@(@item.PrecioProducto + "CRC")</td>
+                                    <td>@(@item.PrecioProducto + " CRC")</td>
                                     <td>
                                         <button type="button" class="btn btn-danger" onclick="ProductoGrid.OnClickDelete(@item.IdProducto)">
                                             <i class="bx bx-trash"></i>

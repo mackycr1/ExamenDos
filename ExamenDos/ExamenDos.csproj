@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Orden\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.js" />
     <None Include="wwwroot\Assets\%40types\bootstrap-validator\bvenums.js.map" />
     <None Include="wwwroot\Assets\%40types\global.js" />

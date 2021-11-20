@@ -7,25 +7,25 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WBL;
 
-namespace ExamenDos.Pages.Producto
+namespace ExamenDos.Pages.Orden
 {
     public class GridModel : PageModel
     {
-        private readonly IProductoService productoService;
+        private readonly IOrdenService ordenService;
 
-        public GridModel(IProductoService productoService)
+        public GridModel(IOrdenService ordenService)
         {
-            this.productoService = productoService;
+            this.ordenService = ordenService;
         }
 
-        public IEnumerable<ProductoEntity> GridList { get; set; } = new List<ProductoEntity>();
+        public IEnumerable<OrdenEntity> GridList { get; set; } = new List<OrdenEntity>();
 
         public async Task<IActionResult> OnGet()
         {
             try
             {
                 //Populates the list with the results returned from the service get method.
-                GridList = await productoService.Get();
+                GridList = await ordenService.Get();
                 return Page();
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace ExamenDos.Pages.Producto
         {
             try
             {
-                var result = await productoService.Delete(new() { IdProducto = id });
+                var result = await ordenService.Delete(new() { IdOrden = id });
                 return new JsonResult(result);
             }
             catch (Exception ex)
