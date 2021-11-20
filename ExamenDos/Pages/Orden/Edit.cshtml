@@ -15,13 +15,15 @@
             @*Form Control*@
             <form id="FormEdit" method="post">
 
-                <input type="hidden" asp-for="Entity.IdProducto" v-model="Entity.IdProducto" />
+                <input type="hidden" asp-for="Entity.IdOrden" v-model="Entity.IdOrden" />
 
                 @*Producto*@
                 <div class="form-group mb-3">
                     <label for="Entity.NombreProducto" class="form-label">Producto</label>
-                    <section asp-for="Entity.IdProducto" class="form-select" asp-items="@(new SelectList(Model.ProductList, "IdProducto", "NombreProducto"))" 
-                             v-model="Entity.IdProducto" required />
+                    <select asp-for="Entity.IdProducto" class="form-select" v-model="Entity.IdProducto"
+                             asp-items="@(new SelectList(Model.ProductList, "IdProducto", "NombreProducto"))" required >
+
+                     </select>
                 </div>
 
 
