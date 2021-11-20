@@ -24,7 +24,7 @@ namespace ExamenDos.Pages.Producto
         {
             try
             {
-                //Populates the list with products.
+                //Populates the list with the results returned from the service get method.
                 GridList = await productoService.Get();
                 return Page();
             }
@@ -38,13 +38,13 @@ namespace ExamenDos.Pages.Producto
         {
             try
             {
-                //Populates the list with products.
+                
                 var result = await productoService.Delete(new() { IdProducto = id });
-                return Redirect("Grid");
+                return new JsonResult(result);
             }
             catch (Exception ex)
             {
-                return Content(ex.Message);
+                return new JsonResult(new DBEntity { CodeError =ex.HResult, MsgError = ex.Message });
             }
         }
 
