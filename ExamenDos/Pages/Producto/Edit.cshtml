@@ -1,5 +1,48 @@
 ﻿@page
 @model ExamenDos.Pages.Producto.EditModel
 @{
+    ViewData["Title"] = "Editar Producto";
 }
 
+<div id="AppEdit" class="container-fluid" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
+
+    <div class="card">
+        <div class="card-header">
+            @(Model.id.HasValue? "Actualizar Producto" : "Nuevo Producto")
+        </div>
+        <div class="card-body">
+
+            @*Form Control*@
+            <form id="FormEdit" method="post">
+
+                <input type="hidden" asp-for="Entity.IdProducto" />
+
+                @*Nombre del Producto*@
+                <div class="form-group mb-3">
+                    <label for="Entity.NombreProducto" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" asp-for="Entity.NombreProducto" maxlength="250" required />
+                </div>
+
+                @*Precio*@
+                <div class="form-group mb-3">
+                    <label for="Entity.PrecioProducto" class="form-label">Nombre</label>
+                    <input type="number" class="form-control" asp-for="Entity.PrecioProducto" maxlength="250" step=".01" min="0" required />
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" @@click="Save" class="btn btn-primary">
+                            @(Model.id.HasValue? "Actualizar" : "Insertar")
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="~/App/Producto/Edit.js"></script>
+}
