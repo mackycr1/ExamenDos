@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entity
+﻿namespace Entity
 {
-    class OrdenEntity : DBEntity
+    public class OrdenEntity : DBEntity
     {
         public OrdenEntity()
         {
@@ -18,6 +12,8 @@ namespace Entity
         public int? IdProducto { get; set; }
 
         public int CantidadProducto { get; set; }
+
+        public bool Estado { get; set; }
 
         public virtual ProductoEntity Producto { get; set; }
     }

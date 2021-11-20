@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using BD;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WBL;
 
 namespace ExamenDos
 {
@@ -11,8 +13,9 @@ namespace ExamenDos
 
         public static IServiceCollection AddDIContainer(this IServiceCollection services)
         {
-
-
+            services.AddSingleton<IDataAccess, DataAccess> ();
+            services.AddTransient<IProductoService, ProductoService>();
+            services.AddTransient<IOrdenService, OrdenService>();
             return services;
         }
     }

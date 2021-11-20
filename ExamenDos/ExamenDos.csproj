@@ -10,6 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Orden\" />
+    <Folder Include="Pages\Producto\" />
     <Folder Include="wwwroot\App\" />
   </ItemGroup>
 
@@ -63,6 +65,11 @@
     <None Include="wwwroot\Assets\template\sidebarmenu.js" />
     <None Include="wwwroot\Assets\template\sparkline.js" />
     <None Include="wwwroot\Assets\template\waves.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DB\DB.csproj" />
+    <ProjectReference Include="..\WBL\WBL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
