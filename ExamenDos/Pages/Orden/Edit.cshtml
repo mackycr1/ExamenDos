@@ -15,12 +15,12 @@
             @*Form Control*@
             <form id="FormEdit" method="post">
 
-                <input type="hidden" asp-for="Entity." v-model="Entity.IdProducto" />
+                <input type="hidden" asp-for="Entity.IdProducto" v-model="Entity.IdProducto" />
 
                 @*Producto*@
                 <div class="form-group mb-3">
-                    <label for="Entity.NombreProducto" class="form-label">Nombre</label>
-                    <section asp-for="Entity.IdProducto" class="form-select" asp-items="@(new SelectList(Model.ProductList, "IdOrden", "IdProduct"))" 
+                    <label for="Entity.NombreProducto" class="form-label">Producto</label>
+                    <section asp-for="Entity.IdProducto" class="form-select" asp-items="@(new SelectList(Model.ProductList, "IdProducto", "NombreProducto"))" 
                              v-model="Entity.IdProducto" required />
                 </div>
 
@@ -33,8 +33,8 @@
 
                 @*Estado*@
                 <div class="form-group mb-3">
-                    <label for="Entity.Estado" class="form-label">Cantidad</label>
-                    <input type="number" class="form-control" asp-for="Entity.Estado" v-model="Entity.Estado" required />
+                    <label for="Entity.Estado" class="form-label">Estado</label>
+                    <input type="checkbox" class="form-control" asp-for="Entity.Estado" v-model="Entity.Estado" required />
                 </div>
 
                 <div class="row">
@@ -52,5 +52,5 @@
 
 @section Scripts
 {
-    <script src="~/App/Producto/Edit.js"></script>
+    <script src="~/App/Orden/Edit.js"></script>
 }
